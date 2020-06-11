@@ -8,18 +8,23 @@ import {Goal}from'../goal';
 })
 export class GoalComponent implements OnInit {
 
-  goals:Goal[] = [
-    {id:1, name:'Watch finding Nemo',description:'Find an online version and watch merlin find his son'},
-    {id:2, name:'Buy Cookies', description:'The standard chunk of Lorem Ipsum used since the 1500s'},
-    {id:3, name:'Get new Phone Case', description:'Contrary to popular belief, Lorem Ipsum is not simply random text.'},
-    {id:4, name:'Get Dog Food', description:'There are many variations of passages of Lorem Ipsum available'},
-    {id:5, name:'shoot the rat', description:'sometimes on purpose (injected humour and the like'},
-    {id:6, name:'Plot my world domination plan', description:'It is a long established fact that a reader will be distracted'},
+  goals: Goal[] = [
+    new Goal(1, 'Watch finding Nemo', 'Find an online version and watch merlin find his son'),
+    new Goal(2,'Buy Cookies','I have to buy cookies for the parrot'),
+    new Goal(3,'Get new Phone Case','Diana has her birthday coming up soon'),
+    new Goal(4,'Get Dog Food','Pupper likes expensive snacks'),
+    new Goal(5, 'shoot the rat','stupid rat keeps urinating on my rags'),
+    new Goal(6,'Solve math homework','Damn Math'),
+    new Goal(7,'Plot my world domination plan','Cause I am an evil overlord'),
   ];
+  
+  toggleDetails(index){
+    this.goals[index].showDescription = !this.goals[index].showDescription;
+  }
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
