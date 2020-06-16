@@ -1,11 +1,13 @@
 <div class="container-fluid">
     <h2 class="text-center">Create a new Goal</h2>
     <hr>
-    <form>
+    <form #goalForm='ngForm'>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" required class="form-control" id="name">
+            <input type="text" required class="form-control" id="name" [(ngModel)]="newGoal.name" name="name">
         </div>
+        <!-- Testing to see if we get any dara-->
+        Display {{newGoal.name}}
 
         <div class="form-group">
             <label for="description">Description</label>
@@ -17,6 +19,6 @@
             <label for="complete">Completion</label>
             <input type="date" id="complete" required>
         </div>
-
+        <button type="submit" class="btn btn-success">Add Goal</button>
     </form>
 </div>

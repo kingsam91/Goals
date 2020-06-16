@@ -11,9 +11,12 @@
                 </div>
 
                 <div *ngIf='goal.showDescription'>
-                    <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-detail>
+                    <app-goal-detail [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-detail>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6">
+            <app-goal-form></app-goal-form>
         </div>
     </div>
     <p *ngIf='goals.length > 6'>You have too many goals</p>
