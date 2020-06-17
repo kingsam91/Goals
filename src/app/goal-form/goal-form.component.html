@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2 class="text-center">Create a new Goal</h2>
     <hr>
-    <form #goalForm='ngForm'>
+    <form (ngSubmit)='submitGoal()' #goalForm='ngForm'>
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" [(ngModel)]="newGoal.name" name="name" #name='ngModel' required>
@@ -9,9 +9,6 @@
                 <p>Name is required</p>
             </div>
         </div>
-        <!-- Testing to see if we get any dara-->
-        Display {{newGoal.name}}
-
         <div class="form-group">
             <label for="description">Description</label>
             <textarea class="form-control" id="description" rows="4" [(ngModel)]="newGoal.description" name="description" #description="ngModel" required></textarea>
